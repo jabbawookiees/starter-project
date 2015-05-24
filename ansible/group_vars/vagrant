@@ -1,0 +1,58 @@
+postgresql_version: 9.4
+postgresql_encoding: 'UTF-8'
+postgresql_locale: 'en_US.UTF-8'
+
+postgresql_admin_user: "postgres"
+postgresql_default_auth_method: "trust"
+
+postgresql_cluster_name: "main"
+postgresql_cluster_reset: false
+
+postgresql_databases:
+  - name: starter
+    hstore: yes
+    uuid_ossp: yes
+
+postgresql_users:
+  - name: starter
+    pass: password
+    encrypted: no
+
+postgresql_user_privileges:
+  - name: starter
+    db: starter
+    priv: "ALL"
+    role_attr_flags: "CREATEDB"
+
+
+nginx_user: "www-data"
+
+nginx_sites:
+  starter:
+    - listen 80
+    - server_name localhost
+    - >
+      location / {
+        root /var/www/starter-project/build/;
+        try_files /index.html /index.html;
+      }
+    - >
+      location /api/ {
+        proxy_pass http://backend_server;
+      }
+    - >
+      location /assets/ {
+        root /var/www/starter-project/build/;
+        rewrite ^/assets/(.*)$ /$1 break;
+      }
+
+
+nginx_configs:
+  proxy:
+      - proxy_set_header X-Real-IP  $remote_addr
+      - proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for
+  upstream:
+      - upstream backend_server { server 127.0.0.1:8080; }
+  gzip:
+      - gzip on
+      - gzip_disable msie6

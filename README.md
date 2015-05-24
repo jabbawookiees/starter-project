@@ -2,6 +2,7 @@ Welcome to my starter project! It's an opinionated collection of languages and t
 to help get you started on making a website.
 
 The core parts of this are:
+
 1. Nginx and postgresql setup and configuration
 
 2. Gulp-based build system

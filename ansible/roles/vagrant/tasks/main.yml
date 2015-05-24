@@ -1,0 +1,16 @@
+- name: Ensure /var/www exists
+  file: >
+    dest=/var/www
+    owner=www-data
+    group=www-data
+    state=directory
+    recurse=yes
+
+- name: Symlink /users/vagrant/starter to /var/www/starter-project
+  file: >
+    src=/home/vagrant/starter-project/frontend
+    dest=/var/www/starter-project
+    owner=www-data
+    group=www-data
+    state=link
+

@@ -1,0 +1,11 @@
+[dbservers]
+hostname.starter-project.fake
+
+[nginx]
+hostname.starter-project.fake
+
+[pyramid]
+hostname.starter-project.fake
+
+[vagrant]
+172.16.0.24
