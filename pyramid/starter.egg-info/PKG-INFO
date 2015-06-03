@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: starter
+Version: 0.0.1
+Summary: A Starter Python project
+Home-page: https://github.com/jabbawookiees/starter-project
+Author: Payton Yao
+Author-email: payton.yao@gmail.com
+License: MIT
+Description: A Starter Python project
+Keywords: sample setuptools development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Personal
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4

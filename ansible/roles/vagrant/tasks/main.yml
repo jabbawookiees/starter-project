@@ -8,9 +8,8 @@
 
 - name: Symlink /users/vagrant/starter to /var/www/starter-project
   file: >
-    src=/home/vagrant/starter-project/frontend
+    src=/home/vagrant/starter-project
     dest=/var/www/starter-project
     owner=www-data
     group=www-data
     state=link
-

@@ -1,0 +1,8 @@
+setup.py
+starter/__init__.py
+starter/wsgi.py
+starter.egg-info/PKG-INFO
+starter.egg-info/SOURCES.txt
+starter.egg-info/dependency_links.txt
+starter.egg-info/entry_points.txt
+starter.egg-info/top_level.txt

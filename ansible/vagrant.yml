@@ -1,9 +1,8 @@
 - name: Deploy vagrant
   hosts: vagrant
   roles:
+    - vagrant
     - postgresql
     - nginx
     - redis
-    - static_assets
     - pyramid_server
-    - vagrant

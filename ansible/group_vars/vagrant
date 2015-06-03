@@ -33,16 +33,17 @@ nginx_sites:
     - server_name localhost
     - >
       location / {
-        root /var/www/starter-project/build/;
+        root /var/www/starter-project/frontend/build/;
         try_files /index.html /index.html;
       }
     - >
       location /api/ {
+        rewrite ^/api/(.*)$ /$1 break;
         proxy_pass http://backend_server;
       }
     - >
       location /assets/ {
-        root /var/www/starter-project/build/;
+        root /var/www/starter-project/frontend/build/;
         rewrite ^/assets/(.*)$ /$1 break;
       }
 
