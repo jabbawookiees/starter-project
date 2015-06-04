@@ -4,5 +4,8 @@
 - name: Install pyramid requirements
   pip: requirements=/var/www/starter-project/pyramid/requirements.txt
 
+- name: Setup local python
+  shell: python setup.py develop chdir=/var/www/starter-project/pyramid
+
 - name: Setup gunicorn service
   template: src=gunicorn.conf.j2 dest=/etc/init/gunicorn.conf owner=root group=root mode="u=rw,g=r,o=r"

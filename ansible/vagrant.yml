@@ -1,8 +1,11 @@
 - name: Deploy vagrant
   hosts: vagrant
   roles:
-    - vagrant
-    - postgresql
-    - nginx
-    - redis
-    - pyramid_server
+    - role: vagrant
+    - role: postgresql
+    - role: nginx
+      nginx_http_params:
+        - sendfile off
+        - access_log /var/log/nginx/access.log
+    - role: redis
+    - role: pyramid_server
